@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIFA 2022</title>
+</head>
+<body>
+    <button onclick="showGroupX()">Group X</button>
+    <button onclick="showMatchY()">Match Y</button>
+    <div id="tableContainer"></div>
+
+    <script>
+        function showGroupX() {
+            fetch('read.php?type=GroupX')
+                .then(response => response.text())
+                .then(data => document.getElementById('tableContainer').innerHTML = data);
+        }
+
+        function showMatchY() {
+            fetch('read.php?type=MatchY')
+                .then(response => response.text())
+                .then(data => document.getElementById('tableContainer').innerHTML = data);
+        }
+    </script>
+</body>
+</html>

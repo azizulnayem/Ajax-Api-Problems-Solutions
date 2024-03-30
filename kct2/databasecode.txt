@@ -1,0 +1,32 @@
+Create a database named fifa2022 manually.
+
+CREATE TABLE IF NOT EXISTS GroupX (
+    Team VARCHAR(50) PRIMARY KEY,
+    Point INT,
+    Position INT
+);
+
+CREATE TABLE IF NOT EXISTS MatchY (
+    TeamA VARCHAR(50),
+    GoalA INT,
+    TeamB VARCHAR(50),
+    GoalB INT,
+    PointA INT,
+    PointB INT,
+    FOREIGN KEY (TeamA) REFERENCES GroupX(Team),
+    FOREIGN KEY (TeamB) REFERENCES GroupX(Team)
+);
+
+INSERT INTO GroupX (Team, Point, Position) VALUES
+('Team1', 0, 0),
+('Team2', 0, 0),
+('Team3', 0, 0),
+('Team4', 0, 0),
+('Team5', 0, 0);
+
+INSERT INTO MatchY (TeamA, GoalA, TeamB, GoalB, PointA, PointB) VALUES
+('Team1', 2, 'Team2', 1, 3, 0),
+('Team3', 0, 'Team4', 3, 0, 3),
+('Team5', 1, 'Team1', 1, 1, 1),
+('Team2', 2, 'Team3', 2, 1, 1),
+('Team4', 0, 'Team5', 2, 0, 3);
