@@ -1,0 +1,29 @@
+create database named uiu manually.
+
+CREATE TABLE IF NOT EXISTS Faculty (
+    Name TEXT,
+    Designation TEXT,
+    Room TEXT
+);
+CREATE TABLE IF NOT EXISTS Course (
+    Id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    Title TEXT,
+    Credit_Hour INTEGER,
+    Room TEXT,
+    Faculty TEXT,
+    Section TEXT
+);
+
+INSERT INTO Faculty (Name, Designation, Room) VALUES
+('John Doe', 'Professor', 'Room 101'),
+('Jane Smith', 'Assistant Professor', 'Room 102'),
+('Michael Johnson', 'Associate Professor', 'Room 103'),
+('Emily Brown', 'Lecturer', 'Room 104'),
+('David Lee', 'Adjunct Faculty', 'Room 105');
+
+INSERT INTO Course (Title, Credit_Hour, Room, Faculty, Section) VALUES
+('Introduction to Computer Science', 3, 'Room A', 'John Doe', 'A1'),
+('Data Structures and Algorithms', 4, 'Room B', 'Jane Smith', 'B1'),
+('Database Management Systems', 3, 'Room C', 'Michael Johnson', 'C1'),
+('Web Development', 3, 'Room D', 'Emily Brown', 'D1'),
+('Artificial Intelligence', 4, 'Room E', 'David Lee', 'E1');
