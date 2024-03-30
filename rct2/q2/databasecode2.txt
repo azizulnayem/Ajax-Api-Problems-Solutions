@@ -1,0 +1,14 @@
+Make a database named studentinfo.
+
+CREATE TABLE IF NOT EXISTS Student (
+    ID INT PRIMARY KEY,
+    Email VARCHAR(255) NOT NULL,
+    Name VARCHAR(255) NOT NULL,
+    Status ENUM('Passed', 'Failed') NOT NULL
+);
+
+INSERT INTO Student (ID, Email, Name, Status) VALUES
+(1122, '1122@gmail.com', 'Tom', 'Passed'),
+(1123, '1123@gmail.com', 'Peter', 'Failed'),
+(1124, '1124@gmail.com', 'Anna', 'Passed'),
+(1125, '1125@gmail.com', 'Lucy', 'Failed');

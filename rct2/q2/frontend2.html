@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Student Status</title>
+</head>
+<body>
+    <form id="studentForm">
+        Enter Student ID: <input type="text" id="studentId" name="studentId"><br>
+        <input type="button" value="Submit" onclick="checkStatus()">
+    </form>
+    <div id="status"></div>
+
+    <script>
+        function checkStatus() {
+            var id = document.getElementById("studentId").value;
+            fetch("backend2.php?id=" + id)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("status").innerHTML = data;
+            });
+        }
+    </script>
+</body>
+</html>
