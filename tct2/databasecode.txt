@@ -1,0 +1,13 @@
+Creat a database named employee manually.
+
+CREATE TABLE IF NOT EXISTS LeaveManagement (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(255),
+    Total_Leaves INT,
+    Leave_Taken INT
+);
+
+INSERT INTO LeaveManagement (Name, Total_Leaves, Leave_Taken) VALUES 
+('ABC', 15, 2),
+('CDF', 6, 5),
+('AAA', 5, 5);
